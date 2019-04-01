@@ -1,16 +1,12 @@
-import React, { Component } from "react"
+import React from "react"
 
 import fetch from "../../utils/http.util"
 
-class SMHI extends Component {
+class SMHI extends React.Component<{}, { result: any }> {
   interval
 
   constructor(props) {
     super(props)
-
-    this.state = {
-      result: [],
-    }
     this.fetchData()
   }
 
@@ -32,8 +28,8 @@ class SMHI extends Component {
   _createList = () => {
     return (
       <>
-        <label>Current Weather</label>
-        <p>{this.state.result}</p>
+        <label>Current Temparature</label>
+        <p>{this.state ? this.state.result : ""}</p>
       </>
     )
   }

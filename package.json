@@ -11,7 +11,9 @@
     "start:lambda": "netlify-lambda serve src/lambda",
     "build": "run-p build:**",
     "build:app": "gatsby build",
-    "build:lambda": "netlify-lambda build src/lambda"
+    "build:lambda": "netlify-lambda build src/lambda",
+    "type-check": "tsc --noEmit",
+    "lint": "tslint --project ."
   },
   "dependencies": {
     "gatsby": "^2.1.31",
@@ -21,6 +23,8 @@
     "gatsby-plugin-react-helmet": "^3.0.9",
     "gatsby-plugin-react-svg": "^2.1.0",
     "gatsby-plugin-sharp": "^2.0.28",
+    "gatsby-plugin-tslint": "^0.0.2",
+    "gatsby-plugin-typescript": "^2.0.11",
     "gatsby-source-filesystem": "^2.0.24",
     "gatsby-transformer-sharp": "^2.1.17",
     "prop-types": "^15.7.2",
@@ -29,13 +33,21 @@
     "react-helmet": "^5.2.0"
   },
   "devDependencies": {
+    "@types/react": "^16.8.10",
+    "@types/react-dom": "^16.8.3",
     "gatsby-plugin-sass": "^2.0.11",
     "http-proxy-middleware": "^0.19.1",
     "netlify-lambda": "^1.4.3",
     "node-sass": "^4.11.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.16.4",
-    "svg-react-loader": "^0.4.6"
+    "svg-react-loader": "^0.4.6",
+    "tslint": "^5.14.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-loader": "^3.5.4",
+    "tslint-plugin-prettier": "^2.0.1",
+    "tslint-react": "^4.0.0",
+    "typescript": "^3.4.1"
   },
   "keywords": [
     "gatsby"

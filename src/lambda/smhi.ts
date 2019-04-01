@@ -2,8 +2,9 @@ var http = require("http")
 
 export function handler(event, _, callback) {
   const query = {
-    host: "api.sl.se",
-    path: "/api2/realtimedeparturesV4.json?key=4a7fb365d4c44323b385a34f6abc183d&siteid=9190&timewindow=20"
+    host: "opendata-download-metobs.smhi.se",
+    path:
+      "/api/version/1.0/parameter/1/station/98230/period/latest-hour/data.json",
   }
   httpGet(query, result => {
     callback(null, {

@@ -10,8 +10,8 @@ import "./index.scss"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`dashboard`, `SL`, `SMHI`]} />
-      <SLRealTime />
-      <SMHI />
+    <SLRealTime />
+    <SMHI />
   </Layout>
 )
 

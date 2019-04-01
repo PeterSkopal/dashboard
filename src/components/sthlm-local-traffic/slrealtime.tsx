@@ -1,19 +1,23 @@
-import React, { Component } from "react"
+import React from "react"
 
 import Icon from "../../assets/SL_logo.svg"
 import fetch from "../../utils/http.util"
 
 import "./slrealtime.scss"
 
-class SLRealTime extends Component {
+interface SLOption {
+  LineNumber: number
+  JourneyDirection: number
+  JourneyNumber: number
+  Destination: string
+  DisplayTime: string
+}
+
+class SLRealTime extends React.Component<{}, { results: SLOption[] }> {
   interval
 
   constructor(props) {
     super(props)
-
-    this.state = {
-      results: [],
-    }
     this.fetchData()
   }
 
@@ -31,10 +35,10 @@ class SLRealTime extends Component {
   }
 
   _createList = () => {
-    let listToTC = []
-    let listToMallanAndRobban = []
-    const data = this.state.results
-    data.forEach(v => {
+    let listToTC: any[] = []
+    let listToMallanAndRobban: any[] = []
+    const data = this.state ? this.state.results : []
+    data.forEach((v: SLOption) => {
       if (v.LineNumber === 17 && v.JourneyDirection === 2) {
         listToMallanAndRobban.push(
           <li key={v.JourneyNumber.toString()} className="metro-entry">
