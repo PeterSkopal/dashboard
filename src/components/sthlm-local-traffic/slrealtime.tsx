@@ -6,7 +6,7 @@ import fetch from "../../utils/http.util"
 import "./slrealtime.scss"
 
 interface SLOption {
-  LineNumber: number
+  LineNumber: string
   JourneyDirection: number
   JourneyNumber: number
   Destination: string
@@ -14,32 +14,32 @@ interface SLOption {
 }
 
 class SLRealTime extends React.Component<{}, { results: SLOption[] }> {
-  interval
+  public interval
 
   constructor(props) {
     super(props)
     this.fetchData()
   }
 
-  fetchData() {
+  public fetchData() {
     fetch("/.netlify/functions/slrealtime")
       .then(res => res.json())
       .then(res => this.setState({ results: res.ResponseData.Metros }))
   }
 
-  componentDidMount() {
+  public componentDidMount() {
     this.interval = setInterval(() => this.fetchData(), 20000)
   }
-  componentWillUnmount() {
+  public componentWillUnmount() {
     clearInterval(this.interval)
   }
 
-  _createList = () => {
-    let listToTC: any[] = []
-    let listToMallanAndRobban: any[] = []
+  public _createList = () => {
+    const listToTC: any[] = []
+    const listToMallanAndRobban: any[] = []
     const data = this.state ? this.state.results : []
     data.forEach((v: SLOption) => {
-      if (v.LineNumber === 17 && v.JourneyDirection === 2) {
+      if (parseInt(v.LineNumber, 10) === 17 && v.JourneyDirection === 2) {
         listToMallanAndRobban.push(
           <li key={v.JourneyNumber.toString()} className="metro-entry">
             {v.Destination} - {v.DisplayTime}
@@ -64,7 +64,7 @@ class SLRealTime extends React.Component<{}, { results: SLOption[] }> {
     )
   }
 
-  render() {
+  public render() {
     return (
       <div className="sl-container">
         <Icon className="sl-logo" />
