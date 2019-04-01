@@ -1,4 +1,5 @@
 html {
+  background-image: linear-gradient(to bottom right, #e9f7ef, #2e85c0);
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -21,6 +22,17 @@ nav,
 section,
 summary {
   display: block;
+}
+html,
+body,
+#___gatsby,
+#___gatsby > div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 audio,
 canvas,
