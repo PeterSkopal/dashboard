@@ -23,7 +23,7 @@ const Layout = ({ children }) => (
         }
       }
     `}
-    render={data => (
+    render={_ => (
       <>
         {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
         {/* <div
@@ -34,8 +34,8 @@ const Layout = ({ children }) => (
             paddingTop: 0,
           }}
         > */}
-          <main>{children}</main>
-          {/* <footer>
+        <main>{children}</main>
+        {/* <footer>
             © {new Date().getFullYear()}, Built with
             {` `}
             <a href="https://www.gatsbyjs.org">Gatsby</a>

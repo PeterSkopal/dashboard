@@ -1,4 +1,4 @@
-function fetch(url) {
+export default function fetch(url: string): Promise<any> {
   return new Promise((resolve, reject) => {
     typeof window !== "undefined" &&
       window
@@ -7,5 +7,3 @@ function fetch(url) {
         .catch(reject)
   })
 }
-
-export default fetch

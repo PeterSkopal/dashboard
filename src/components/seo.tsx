@@ -10,7 +10,15 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, keywords, title }) {
+interface SEOOption {
+  description: string
+  lang: string
+  meta: any[]
+  keywords: string[]
+  title: string
+}
+
+function SEO(options: Partial<SEOOption>) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -25,14 +33,14 @@ function SEO({ description, lang, meta, keywords, title }) {
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = options.description || site.siteMetadata.description
 
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: options.lang,
       }}
-      title={title}
+      title={options.title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
@@ -41,7 +49,7 @@ function SEO({ description, lang, meta, keywords, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: options.title,
         },
         {
           property: `og:description`,
@@ -61,7 +69,7 @@ function SEO({ description, lang, meta, keywords, title }) {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: options.title,
         },
         {
           name: `twitter:description`,
@@ -69,14 +77,14 @@ function SEO({ description, lang, meta, keywords, title }) {
         },
       ]
         .concat(
-          keywords.length > 0
+          options.keywords && options.keywords.length > 0
             ? {
                 name: `keywords`,
-                content: keywords.join(`, `),
+                content: options.keywords.join(`, `),
               }
             : []
         )
-        .concat(meta)}
+        .concat(options.meta ? options.meta : [])}
     />
   )
 }
