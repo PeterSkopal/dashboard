@@ -2,14 +2,14 @@ import * as http from "http";
 
 export function handler(event, _, callback) {
   const query = {
-    host: "api.sl.se",
+    host: "opendata-download-metfcst.smhi.se",
     path:
-      "/api2/realtimedeparturesV4.json?key=4a7fb365d4c44323b385a34f6abc183d&siteid=9190&timewindow=20",
+      "/api/category/pmp3g/version/2/geotype/point/lon/18.090426/lat/59.310182/data.json",
   };
   httpGet(query, result => {
     callback(null, {
-      body: result,
       statusCode: 200,
+      body: result,
     });
   });
 }
@@ -17,8 +17,8 @@ export function handler(event, _, callback) {
 function httpGet(query, callback) {
   const options = {
     host: query.host,
-    method: "GET",
     path: query.path,
+    method: "GET",
   };
 
   const req = http.request(options, res => {

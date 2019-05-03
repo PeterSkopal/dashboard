@@ -1,5 +1,5 @@
 html {
-  background-image: linear-gradient(to bottom right, #e9f7ef, #2e85c0);
+  background-image: linear-gradient(to bottom right, #e9f7ef, #2e86c094);
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -33,6 +33,7 @@ body,
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: scroll;
 }
 audio,
 canvas,
@@ -212,7 +213,7 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  font-family: monospace, serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;

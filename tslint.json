@@ -2,10 +2,13 @@
   "rulesDirectory": ["tslint-plugin-prettier"],
   "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
   "rules": {
-    "prettier": true,
-    "jsx-no-multiline-js": false,
+    // "prettier": true,
+    // "jsx-no-multiline-js": false,
     "jsx-no-lambda": false,
-    "import-name": false,
-    "no-boolean-literal-compare": false
+    "interface-name": [true, "never-prefix"],
+    "object-literal-sort-keys": false,
+    "no-implicit-any": false,
+    "semicolon": [true, "always"],
+    "quotemark": [true, "double"]
   }
 }

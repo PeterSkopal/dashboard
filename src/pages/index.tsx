@@ -1,11 +1,11 @@
-import React from "react"
+import React from "react";
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import SLRealTime from "../components/sthlm-local-traffic/slrealtime"
-import SMHI from "../components/smhi-weather/smhiweather"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import SMHI from "../components/smhi-weather/smhiweather";
+import SLRealTime from "../components/sthlm-local-traffic/slrealtime";
 
-import "./index.scss"
+import "./index.scss";
 
 const IndexPage = () => (
   <Layout>
@@ -13,6 +13,6 @@ const IndexPage = () => (
     <SLRealTime />
     <SMHI />
   </Layout>
-)
+);
 
-export default IndexPage
+export default IndexPage;
