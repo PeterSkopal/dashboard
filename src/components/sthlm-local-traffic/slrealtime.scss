@@ -4,9 +4,24 @@
   .sl-logo {
     width: 50px;
     height: 50px;
+    align-self: center;
   }
 
-  .metro-entry {
-    font-size: 16px;
+  label {
+    margin: 10px 0;
+  }
+  .metro-entry-container {
+    margin: 0;
+    .metro-entry {
+      padding: 8px;
+      font-size: 16px;
+      border-radius: 4px;
+      list-style-type: none;
+      box-shadow: 0px 2px 9px -2px grey;
+      display: flex;
+      justify-content: space-between;
+      transition: all 1s ease-in-out;
+    }
+    transition: all 1s ease-in-out;
   }
 }
