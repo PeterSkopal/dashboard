@@ -100,7 +100,7 @@ class SMHI extends React.Component<
         );
       });
       return (
-        <ul key={day} className="date-group">
+        <ul key={groupDate} className="date-group">
           <span className="day">{day}</span>
           {foreCastGroup}
         </ul>
