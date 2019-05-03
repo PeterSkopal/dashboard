@@ -6,7 +6,7 @@ import fetch from "../../utils/http.util";
 import "./slrealtime.scss";
 
 interface SLOption {
-  LineNumber: number;
+  LineNumber: string;
   JourneyDirection: number;
   JourneyNumber: number;
   Destination: string;
@@ -15,7 +15,6 @@ interface SLOption {
 
 class SLRealTime extends React.Component<{}, { results: SLOption[] }> {
   public interval;
-  public interval2;
 
   constructor(props) {
     super(props);
