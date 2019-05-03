@@ -1,0 +1,42 @@
+.smhi-container {
+  height: 100%;
+  padding: 5px;
+
+  .smhi-forecast-list {
+    margin: 0;
+    font-size: 15px;
+    .date-group {
+      box-shadow: 0px 2px 9px -2px grey;
+      border-radius: 4px;
+      margin: 0;
+      .day {
+        text-transform: capitalize;
+        font-weight: 600;
+        padding: 8px;
+      }
+      .smhi-forecast-entry {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 8px;
+        .time {
+          display: flex;
+          flex-direction: column;
+          text-align: start;
+          .hour {
+          }
+        }
+        .weather {
+          display: flex;
+          flex-direction: column;
+          text-align: end;
+          .symbol {
+            margin-left: 20px;
+          }
+          .temperature {
+          }
+        }
+      }
+    }
+  }
+}
